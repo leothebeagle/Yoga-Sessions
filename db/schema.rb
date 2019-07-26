@@ -28,6 +28,9 @@ ActiveRecord::Schema.define(version: 2019_07_25_232516) do
   end
 
   create_table "student_programs", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "program_id"
+    t.boolean "favorited", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
