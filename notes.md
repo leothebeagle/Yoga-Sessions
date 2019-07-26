@@ -42,7 +42,4 @@ What needs to be built for steps 1 and 2:
     get /teachers/:id => "teachers#show"
 
 
-    
-
-  generate homepages for root and teachers
 
