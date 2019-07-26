@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
- 
 
   root 'welcome#home'
   get 'teachers/homepage' => "welcome#teacher_home"
