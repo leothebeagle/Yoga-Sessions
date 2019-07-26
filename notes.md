@@ -34,5 +34,15 @@ What needs to be built for steps 1 and 2:
 
 - Teachers controller with actions: new, create, and show
 - view pages for new and show
+- routes:
+    root "welcome#home" (welcome page for the website, link to teachers home from here)
+    get /teachers/home => "welcome#teachers"
+    get /teachers/new => "teachers#new"
+    post /teachers => "teachers#create"
+    get /teachers/:id => "teachers#show"
 
+
+    
+
+  generate homepages for root and teachers
 
