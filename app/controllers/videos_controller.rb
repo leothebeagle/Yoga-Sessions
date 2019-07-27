@@ -2,6 +2,7 @@ class VideosController < ApplicationController
    #everything here will require a login. create and show will only be available to 
    # the user that created them. 
     def show
+        @video = Video.find_by(id: params[:id])
     end
 
     def new
