@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
         @student = Student.new(student_params)
         
         if @student.save
-            redirect_to student(@student)
+            redirect_to student_path(@student)
         else
             render new_student_path
         end
