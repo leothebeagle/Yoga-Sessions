@@ -6,15 +6,16 @@ class TeachersController < ApplicationController
     
     def new
        @teacher = Teacher.new
+    #    (first_name: "test", last_name: "test", email: "test", bio: "test", password_digest: "jkjk")
     end
 
     def create
-        teacher = Teacher.new(teacher_params)
+        @teacher = Teacher.new(teacher_params)
         
-        if teacher.save
-            redirect_to teacher_path(teacher)
+        if @teacher.save
+            redirect_to teacher_path(@teacher)
         else
-            render 'new'
+            render new_teacher_path
         end
     end
 
