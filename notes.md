@@ -45,10 +45,11 @@ Teacher flow: (write out two at a time, build out the routes, controllers and vi
 
     - Videos controller
     - action for new and create
+
     - what params do you need in new to associate the video with the teacher?
 
     It looks like will need to build out a login system and make use of the method current user which depends on a user being logged in. 
-    If you complete anything that'll be replicated, just make sure to go through with the replication. 
+    If you complete anything that'll be replicated, just make sure to go through with the replication. (for example, I built out the student model, controller, and views. at this point its all set up to set new students up.)
 
 **--> For now lets polish up the teacher model. If I get the login system down and have it work for the teacher side of the website, implementing the remaining models and students can be replicated with some modifications of course.
 
