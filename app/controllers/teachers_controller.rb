@@ -13,6 +13,7 @@ class TeachersController < ApplicationController
         @teacher = Teacher.new(teacher_params)
         
         if @teacher.save
+            session[:teacher_id] = @teacher.id 
             redirect_to teacher_path(@teacher)
         else
             render new_teacher_path
