@@ -11,8 +11,7 @@ Rails.application.routes.draw do
 
   resources :programs, only: [:show, :new, :create]
 
-    get '/teacher/login' => "sessions#new"
-    post '/teacher/login' => "sessions#create"
+  
     get '/login' => "sessions#new"
     post '/login' => "sessions#create"
   
