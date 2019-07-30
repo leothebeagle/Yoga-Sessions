@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
     def create 
         if params[:teacher][:login] == "0"
-            puts "logging in as student"
             @student = Student.find_by(email: params[:email])
             if @student.authenticate(params[:password])
                 session[:student_id] = @student.id
@@ -15,9 +14,9 @@ class SessionsController < ApplicationController
                 render login_path
             end
         elsif params[:teacher][:login] == "1"
-            puts "logging in as teacher"
             @teacher = Teacher.find_by(email: params[:email])
             if @teacher.authenticate(params[:password])
+                session[:teacher_id] = @teacher.id
                 redirect_to teacher_path @teacher 
             else 
                 render login_path @teacher 
