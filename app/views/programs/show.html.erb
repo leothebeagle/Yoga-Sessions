@@ -1,1 +1,15 @@
-<h2>Program show page</h2>
+<h2><%= @program.name %> by: <%= @program.teacher.first_name %> <%= @program.teacher.last_name %></h2>
+<h3><%= @program.description %></h3>
+
+<h4> Videos </h4>
+
+<% @videos.each do |video| %>
+    <p>
+        <li>Title: <%= video.title %></li>
+        <li>Description: <%= video.description %></li>
+        <li>Duration: <%= video.duration %> min </li>
+    </p>
+<% end %>
+
+
+

@@ -10,6 +10,7 @@ class ProgramsController < ApplicationController
 
     def show
         @program = Program.find_by(id: params[:id])
+        @videos = @program.videos
     end
 
     def new
@@ -18,8 +19,6 @@ class ProgramsController < ApplicationController
     end
 
     def create
-    
-        # @program = Program.new(program_params)
         @program = current_teacher.programs.new(program_params)
       
         if @program.save
