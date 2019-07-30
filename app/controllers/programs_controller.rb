@@ -19,9 +19,9 @@ class ProgramsController < ApplicationController
 
     def create
     
-        @program = Program.new(program_params)
-        binding.pry
-
+        # @program = Program.new(program_params)
+        @program = current_teacher.programs.new(program_params)
+      
         if @program.save
             redirect_to program_path(@program) 
         else
