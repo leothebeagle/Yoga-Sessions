@@ -1,5 +1,9 @@
 <h2> <%= @video.title %></h2>
-<h3>By: <%= @video.teacher.first_name %></h3>
+
+<p><%= @video.description %> </p>
+
+<h3>By: <%= @video.teacher.first_name %> <%= @video.teacher.last_name %></h3>
+
 
 
 
