@@ -14,7 +14,7 @@ class ProgramsController < ApplicationController
 
     def new
         @program = Program.new 
-        @videos = Video.all 
+        @videos = current_teacher.videos 
     end
 
     def create
