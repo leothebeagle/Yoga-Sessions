@@ -1,6 +1,17 @@
+<h3>Teacher info section:</h3>
+
 <h2>Teacher Name: <%= @teacher.first_name %> <%= @teacher.last_name %></h2>
 <br>
 <h3>Bio: <%= @teacher.bio %></h3>
 <br>
 <h3>Email: <%= @teacher.email %></h3>
 
+
+
+
+<p><%= link_to "View your programs", teacher_programs_path(@current_teacher) %> </p>
+<p><%= link_to "View all programs", programs_path %></p>
+<p><%= link_to "View all your videos", teacher_videos_path %></p>
+
+
+<p> <%= link_to "Logout", logout_path %> </p>
