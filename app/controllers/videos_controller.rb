@@ -1,17 +1,12 @@
 class VideosController < ApplicationController
-   #everything here will require a login. create and show will only be available to 
-   # the user that created them. 
+   #everything here will require a login. create action will depend on the teacher creating it.  
     def show
         @video = Video.find_by(id: params[:id])
     end
 
     def new
-        @teacher = Teacher.first
+        @teacher = current_teacher 
         @video = Video.new 
-        # will assigning @video this way mean that
-        # there is a way to pass the teacher_id to the video create action automatically?
-        #that doesnt make sense....you probably will have to pass it in as a hidden input. 
-        # worth checking out tho. 
     end
 
     def create
