@@ -4,6 +4,8 @@
 
 <h3>By: <%= @video.teacher.first_name %> <%= @video.teacher.last_name %></h3>
 
+<%= link_to "View all your videos", teacher_videos_path(@current_teacher) %>
+
 
 
 

@@ -9,6 +9,7 @@ class VideosController < ApplicationController
 
     def show
         @video = Video.find_by(id: params[:id])
+        current_teacher
     end
 
     def new
