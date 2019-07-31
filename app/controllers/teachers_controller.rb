@@ -1,5 +1,12 @@
 class TeachersController < ApplicationController
     
+    def index 
+        if params.include?([:student_id])
+            @teachers = current_student.teachers
+        else 
+            @teachers = Teacher.all
+    end
+    
     def show
         current_teacher
         # @teacher = Teacher.find(params[:id])
