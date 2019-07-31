@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
     
     def show
-        @student = Student.find(params[:id])
+        current_student
     end
 
     def new
@@ -12,6 +12,7 @@ class StudentsController < ApplicationController
         @student = Student.new(student_params)
         
         if @student.save
+            session[:student_id] = @student.id
             redirect_to student_path(@student)
         else
             render new_student_path
