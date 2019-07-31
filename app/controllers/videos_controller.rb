@@ -3,6 +3,10 @@ class VideosController < ApplicationController
    before_action :require_teacher_login
    skip_before_action :require_teacher_login, only: [:show]
 
+    def index
+        @videos = current_teacher.videos 
+    end
+
     def show
         @video = Video.find_by(id: params[:id])
     end
