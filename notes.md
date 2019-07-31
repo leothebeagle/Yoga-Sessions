@@ -55,6 +55,29 @@ Teacher flow: (write out two at a time, build out the routes, controllers and vi
 
     Add validations to Teacher.
 
+    ---
+
+    Working on wrapping up the teachers section of things:
+
+    These are things that I should work on next:
+
+    Draw out the current condition of the app and make sure that no one can do something theyre not supposed to do.
+    It would be helpful to list out what each type of user is authorized to do. and then try to break it or test it.
+    ex: have a student try to make a new video or program - have a teacher try to edit another teacher's program -
+    have a teacher try to create a video under another teacher's name - have a teacher try to delete another teacher's video.
+    
+    Incorporate:
+
+    1. Ability to edit and delete.
+    2. Ability to edit and delete videos.
+    3. Add links to all the pages so there's a flow.
+    4. implement the scope method.
+    4. distinguish between a teacher's homepage and their profile page. may need a new route here.
+    5. Try to incorporate a form that will allow creation of videos from the ne program view. (nested forms, watch video).
+    6. Incorporate the students side of things: ability to add programs to their library, ability to favorite a program, and perhaps the ability to "take" a class. this may require another join table.
+     
+    
+
 
 
 
