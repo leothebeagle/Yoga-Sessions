@@ -1,7 +1,8 @@
-<%= @programs.each do |program| %>
+<% @programs.each do |program| %>
     <p>
         <h4><%= program.name %></h4><br>
         <%= program.description %><br>
-        <%= program.teacher %><br>
+        By: <%= program.teacher.first_name %> <%= program.teacher.last_name %><br>
     </p>
 <% end %>
+
