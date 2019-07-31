@@ -6,7 +6,6 @@ class ProgramsController < ApplicationController
     
     def index
         if params.include?([:teacher_id])
-             # /teachers/:teacher_id/programs
             @programs = current_teacher.programs 
         else
             @programs = Program.all
