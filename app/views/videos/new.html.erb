@@ -13,8 +13,6 @@
 
 <%= form_for @video do |f| %>
 
-    <input type="hidden", value="<%= @teacher.id %>" name="video[teacher_id]">
-
     Title: <%= f.text_field :title %><br><br>
 
     Description: <%= f.text_area :description %><br><br>

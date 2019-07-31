@@ -18,7 +18,8 @@ class VideosController < ApplicationController
     end
 
     def create
-        @video = Video.new(video_params)
+        # @video = Video.new(video_params)
+        @video = current_teacher.videos.new(video_params)
 
         if @video.save
             redirect_to video_path(@video)
@@ -30,7 +31,7 @@ class VideosController < ApplicationController
     private
 
     def video_params
-        params.require(:video).permit(:title, :description, :duration, :teacher_id)
+        params.require(:video).permit(:title, :description, :duration)
     end
 
     def require_teacher_login
