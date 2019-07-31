@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     resources :videos, only: [:new, :index, :show]
   end
 
-  resources :students, only: [:show, :new, :create]
+  resources :students, only: [:show, :new, :create] do 
+    resources :teachers, only: [:index]
+  end
 
   resources :videos, only: [:show, :new, :create]
 

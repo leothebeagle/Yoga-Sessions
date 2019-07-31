@@ -1,5 +1,5 @@
-<%= @student.first_name %> <%= @student.last_name %>
+<%= @current_student.first_name %> <%= @current_student.last_name %>
 
 
-
+<p><%= link_to "View your teachers", student_teachers @current_student %></p>
 <p><%= link_to "View all programs", programs_path %></p>
