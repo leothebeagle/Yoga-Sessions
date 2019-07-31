@@ -1,7 +1,8 @@
 <% @videos.each do |video| %>
     <p>
-    <h4><%= video.title %></h4>
-    <li><%= video.description %></li>
-    <li><%= video.duration %></li>
+    <h4><%= link_to video.title, video_path(video)  %></h4>
     </p>
 <% end %>
+
+<%= link_to "Add new video", new_video_path %><br>
+<%= link_to "Logout", logout_path %>
