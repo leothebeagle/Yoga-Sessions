@@ -1,7 +1,8 @@
 class VideosController < ApplicationController
-   #everything here will require a login. create action will depend on the teacher creating it.  
-   before_action :require_teacher_login
-   skip_before_action :require_teacher_login, only: [:show]
+    before_action :require_login, only: [:show]
+    before_action :require_teacher_login
+    skip_before_action :require_teacher_login, only: [:show]
+   # the show action should require person to be logged in too.
 
     def index
         @videos = current_teacher.videos 
@@ -13,12 +14,10 @@ class VideosController < ApplicationController
     end
 
     def new
-        @teacher = current_teacher 
         @video = Video.new 
     end
 
     def create
-        # @video = Video.new(video_params)
         @video = current_teacher.videos.new(video_params)
 
         if @video.save
@@ -35,7 +34,17 @@ class VideosController < ApplicationController
     end
 
     def require_teacher_login
-        return head(:forbidden) unless session.include? :teacher_id
-    end 
+        return head(:forbidden) unless session.include?(:teacher_id)
+    end
+     
+
+    def require_login 
+        if session.include?(:teacher_id) || session.include?(:student_id) 
+            true 
+        else
+            return head(:forbidden)
+        end
+    end
 
 end
+
