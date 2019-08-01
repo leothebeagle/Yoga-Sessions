@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'teachers/homepage' => "welcome#teacher_home"
 
   resources :teachers, only: [:show, :new, :create] do
-    resources :programs, only: [:new, :index, :show]
+    resources :programs, only: [:new, :index, :show, :edit, :update]
     resources :videos, only: [:new, :index, :show]
   end
 
