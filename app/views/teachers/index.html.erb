@@ -2,3 +2,7 @@
 <% @teachers.each do |teacher| %>
     <li> <%= link_to "#{teacher.first_name} #{teacher.last_name}", teacher_path(teacher) %> </li>
 <% end %>
+
+<% if @current_student %>
+    <p><%= link_to "Back to profile page", student_path(@current_student) %></p>
+<% end %>
