@@ -39,6 +39,19 @@ class ProgramsController < ApplicationController
         end
     end
 
+    def edit
+        @program = Program.find_by(id: params[:id])
+        @videos = current_teacher.videos 
+    end
+
+    def update
+
+    end
+
+    def destroy
+
+    end
+
     private 
 
     def program_params
