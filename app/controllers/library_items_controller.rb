@@ -1,0 +1,2 @@
+class LibraryItemsController < ApplicationController
+end

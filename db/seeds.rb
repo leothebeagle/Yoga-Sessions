@@ -25,3 +25,34 @@ carlos.save
 
 george = Student.new(first_name: "George", last_name: "Saad", email: "george@student.com", password: "password", password_confirmation: "password")
 george.save
+
+# Create videos:
+
+v_one = amina.videos.create(title: "Vinyasa video 1", description: "first video of the Vinyasa Series", duration: "30")
+v_two = amina.videos.create(title: "Vinyasa video 2", description: "second video of the Vinyasa Series", duration: "30")
+v_three = amina.videos.create(title: "Vinyasa video 3", description: "third video of the Vinyasa Series", duration: "30")
+
+
+h_one = amina.videos.create(title: "Hatha video 1", description: "first video of the Hatha Series", duration: "40")
+h_two = amina.videos.create(title: "Hatha video 2", description: "second video of the Hatha Series", duration: "40")
+h_three = amina.videos.create(title: "Hatha video 3", description: "third video of the Hatha Series", duration: "40")
+
+
+#Create Programs:
+
+vinyasa_series = amina.programs.create(name: "Vinyasa Series", description: "A 3 day vinyasa series")
+vinyasa_series.videos << v_one
+vinyasa_series.videos << v_two
+vinyasa_series.videos << v_three
+
+hatha_series = amina.programs.create(name: "Hatha Series", description: "A 3 day hatha series")
+hatha_series.videos << h_one
+hatha_series.videos << h_two 
+hatha_series.videos << h_three
+
+# add programs to student libraries:
+
+carlos.programs << vinyasa_series 
+george.programs << hatha_series 
+leo.programs << vinyasa_series 
+leo.programs << hatha_series 
