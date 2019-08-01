@@ -2,7 +2,8 @@ class TeachersController < ApplicationController
     
     def index 
         if params.include?(:student_id)
-            @teachers = current_student.teachers
+            current_student
+            @teachers = current_student.teachers.uniq
         else 
             @teachers = Teacher.all
         end
