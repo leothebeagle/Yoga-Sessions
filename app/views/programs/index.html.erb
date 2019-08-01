@@ -1,6 +1,6 @@
 <% @programs.each do |program| %>
     <p>
-        <h4><%= program.name %></h4><br>
+        <h4><%= link_to program.name, program_path(program) %></h4><br>
         <%= program.description %><br>
         By: <%= program.teacher.first_name %> <%= program.teacher.last_name %><br>
         
