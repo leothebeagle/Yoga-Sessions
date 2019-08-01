@@ -12,3 +12,7 @@
         <%= link_to "Back to profile page", teacher_path(@current_teacher) %>
     <% end %>
 
+    <% if @current_student %>
+        <%= link_to "Back to profile page", student_path(@current_student) %>
+    <% end %>
+
