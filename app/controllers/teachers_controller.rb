@@ -10,7 +10,6 @@ class TeachersController < ApplicationController
 
     def show
         current_teacher
-        # @teacher = Teacher.find(params[:id])
     end
     
     def new

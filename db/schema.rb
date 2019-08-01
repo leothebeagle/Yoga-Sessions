@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_27_230628) do
+ActiveRecord::Schema.define(version: 2019_08_01_000252) do
+
+  create_table "library_items", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "program_id"
+    t.boolean "favorited", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "program_videos", force: :cascade do |t|
     t.integer "program_id"
@@ -23,14 +31,6 @@ ActiveRecord::Schema.define(version: 2019_07_27_230628) do
     t.string "name"
     t.string "description"
     t.integer "teacher_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "student_programs", force: :cascade do |t|
-    t.integer "student_id"
-    t.integer "program_id"
-    t.boolean "favorited", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
