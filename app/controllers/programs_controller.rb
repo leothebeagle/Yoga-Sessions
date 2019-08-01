@@ -12,6 +12,7 @@ class ProgramsController < ApplicationController
             @programs = current_student.programs
         else
             current_teacher
+            current_student
             @programs = Program.all
         end 
     end
