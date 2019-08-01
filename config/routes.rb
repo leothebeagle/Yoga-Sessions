@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   resources :programs, only: [:show, :new, :create, :index]
 
+  resources :library_items, only: [:create]
+  
   
     get '/login' => "sessions#new"
     post '/login' => "sessions#create"

@@ -11,5 +11,9 @@
     </p>
 <% end %>
 
+  <%= form_tag('/library_items') do %>
+    <input name="library_item[program_id]" type="hidden" id="library_item_program_id" value="<%= @program.id %>"><br>
 
+    <input type="submit" value='Add this program to your library'>
+   <% end %>
 
