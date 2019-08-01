@@ -7,3 +7,8 @@
     </p>
 <% end %>
 
+    <% if @current_teacher %>
+        <%= link_to "Create a new Program", new_program_path %><br>
+        <%= link_to "Back to your profile", teacher_path(@current_teacher) %>
+    <% end %>
+

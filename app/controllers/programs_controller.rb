@@ -5,7 +5,8 @@ class ProgramsController < ApplicationController
     skip_before_action :require_teacher_login, only: [:index, :show]
     
     def index
-        if params.include?([:teacher_id])
+        if params.include?(:teacher_id)
+            current_teacher 
             @programs = current_teacher.programs 
         else
             @programs = Program.all
