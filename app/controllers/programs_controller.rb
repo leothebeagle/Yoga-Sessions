@@ -45,7 +45,15 @@ class ProgramsController < ApplicationController
     end
 
     def update
+        @program = Program.find_by(id:params[:id])
 
+        if current_teacher.programs.include?(@program)
+            @program.update(program_params)
+            redirect_to program_path(@program)
+        else
+            flash[:notice] = "You cannot edit this program"
+            redirect_to teacher_programs_path(current_teacher)
+        end
     end
 
     def destroy

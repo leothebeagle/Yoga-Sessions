@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :videos, only: [:show, :new, :create]
 
-  resources :programs, only: [:show, :new, :create, :index]
+  resources :programs, only: [:show, :new, :create, :index, :update]
 
   resources :library_items, only: [:create]
   
