@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :students, only: [:show, :new, :create] do 
     resources :teachers, only: [:index]
+    resources :programs, only: [:index]
   end
 
   resources :videos, only: [:show, :new, :create]
