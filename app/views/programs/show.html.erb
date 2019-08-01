@@ -21,6 +21,6 @@
 
 <% if @current_teacher %>
   <%= link_to "Back to your programs", teacher_programs_path(@current_teacher)%>
-
+  <%= link_to "Edit Program", edit_teacher_program_path(@current_teacher, @program)%>
 <% end %>
 
