@@ -39,6 +39,8 @@ class VideosController < ApplicationController
     end 
 
     def destroy
+        Video.find(params[:id]).destroy 
+        redirect_to teacher_videos_path(current_teacher)
     end
 
     private
