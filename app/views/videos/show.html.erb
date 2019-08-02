@@ -1,10 +1,18 @@
 <h2> <%= @video.title %></h2>
 
-<p><%= @video.description %> </p>
+<p>Description: <%= @video.description %> </p>
+<p>Duration: <%= @video.duration %> min </p>
 
 <h3>By: <%= @video.teacher.first_name %> <%= @video.teacher.last_name %></h3>
 
-<%= link_to "View all your videos", teacher_videos_path(@current_teacher) %>
+
+<% if @current_teacher %>
+  <%= link_to "View all your videos", teacher_videos_path(@current_teacher) %><br>
+  <%= link_to "Edit Video", edit_teacher_video_path(@current_teacher, @video)%><br>
+  <%= form_tag video_path(@video), method: "delete" do %>
+    <%= submit_tag "Delete this video" %>
+  <% end %>
+<% end %>
 
 
 

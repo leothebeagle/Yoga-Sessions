@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   get 'teachers/homepage' => "welcome#teacher_home"
 
   resources :teachers, only: [:show, :new, :create] do
-    resources :programs, only: [:new, :index, :show, :edit, :update]
-    resources :videos, only: [:new, :index, :show]
+    resources :programs, only: [:new, :index, :show, :edit]
+    resources :videos, only: [:new, :index, :show, :edit]
   end
 
   resources :students, only: [:show, :new, :create] do 
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :programs, only: [:index]
   end
 
-  resources :videos, only: [:show, :new, :create]
+  resources :videos, only: [:show, :new, :create, :destroy, :update ]
 
   resources :programs, only: [:show, :new, :create, :index, :update, :destroy]
 

@@ -9,8 +9,9 @@ class VideosController < ApplicationController
     end
 
     def show
-        @video = Video.find_by(id: params[:id])
         current_teacher
+        current_student    
+        @video = Video.find_by(id: params[:id])
     end
 
     def new
@@ -25,6 +26,19 @@ class VideosController < ApplicationController
         else
             render new_video_path
         end
+    end
+
+    def edit
+        @video = Video.find(params[:id])
+    end
+
+    def update
+        @video = Video.find(params[:id])
+        @video.update(video_params)
+        redirect_to teacher_video_path(current_teacher, @video)
+    end 
+
+    def destroy
     end
 
     private
