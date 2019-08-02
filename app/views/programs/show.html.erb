@@ -20,7 +20,10 @@
 <% end %>
 
 <% if @current_teacher %>
-  <%= link_to "Back to your programs", teacher_programs_path(@current_teacher)%>
-  <%= link_to "Edit Program", edit_teacher_program_path(@current_teacher, @program)%>
+  <%= link_to "Back to your programs", teacher_programs_path(@current_teacher)%><br>
+  <%= link_to "Edit Program", edit_teacher_program_path(@current_teacher, @program)%><br>
+  <%= form_tag program_path(@program), method: "delete" do %>
+    <%= submit_tag "Delete this program" %>
+  <% end %>
 <% end %>
 

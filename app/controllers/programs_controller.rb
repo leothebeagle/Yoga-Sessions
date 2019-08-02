@@ -57,7 +57,8 @@ class ProgramsController < ApplicationController
     end
 
     def destroy
-
+        Program.find(params[:id]).destroy 
+        redirect_to teacher_programs_path(current_teacher)
     end
 
     private 
