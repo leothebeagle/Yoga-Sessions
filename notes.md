@@ -75,6 +75,46 @@ Teacher flow: (write out two at a time, build out the routes, controllers and vi
     4. distinguish between a teacher's homepage and their profile page. may need a new route here.
     5. Try to incorporate a form that will allow creation of videos from the ne program view. (nested forms, watch video).
     6. Incorporate the students side of things: ability to add programs to their library, ability to favorite a program, and perhaps the ability to "take" a class. this may require another join table.
+    7. Implement oAuth with Instagram
+
+---
+
+Action list:
+
+First sprint (30 min)
+
+1. On programs index page add a conditional link:
+    if a teacher is viewing the programs index, they should have a link that allows them to create a new program.
+2. On the student profile page (show page) include links to view your library, which includes programs the student has added to their library 
+3. On the programs index page, the name of the program should link to the program show page so that a student can then 
+add the program to their library. During the process of a student adding a program to their library, should only add the program if the student hasn't already included it.
+4. Add links to the student_programs index page. should link back to profile.
+5. add link on student show page to logout
+6. add link on student_teachers page to go back to profile page.
+7. When a student views their teachers should have a list of unique names. 
+
+Second sprint (30 min)
+
+1. On the homepage, add link to create a new student
+2. on homepage link to the teachers homepage
+3. on teacher's homepage, add link to create a new teacher
+4. Add login button on student homepage
+5. Add login button on teacher homepage
+6. Add edit features from program show page
+
+Third sprint (30 min)
+1. Add delete feature from program show page
+2. Add edit feature from video show page
+3. Add delete feature from video show page
+
+To-dos:
+
+- Implement scope method.
+- Implement user submittable attribute in student_programs (favorited).
+- Implement oAuth.
+- Implment partials for views.
+- refactor code to DRY up, reduce logic in controllers, use helpers for views to display conditional content, etc.
+- implement devise in another branch, for signup, login, logout and oAuth.
      
     
 
