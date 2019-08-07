@@ -27,9 +27,9 @@ class SessionsController < ApplicationController
         @student = Student.find_or_create_by(uid: auth['uid']) do |u|
             u.first_name = auth['info']['name']
             u.email = auth['info']['email']
-            u.image = auth['info']['image']
         end
-
+        binding.pry
+        
         session[:student_id] = @student.id 
         redirect_to student_path @student
     end

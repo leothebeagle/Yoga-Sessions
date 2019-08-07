@@ -115,6 +115,14 @@ To-dos:
 - Implment partials for views.
 - refactor code to DRY up, reduce logic in controllers, use helpers for views to display conditional content, etc.
 - implement devise in another branch, for signup, login, logout and oAuth.
+
+First sprint (30 min):
+
+- implement scope method for Program. The scope method could filter programs based on the current teacher or 
+it could take in arguments, and pull up programs for any teacher passed in as the argument. 
+
+Second sprint (30 min):
+- Implement login via oauth and instagram
      
     
 
