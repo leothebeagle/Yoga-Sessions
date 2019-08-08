@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  # devise related
+  # devise related student routes
 
   devise_for :students
 
@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     get '/students/logout', to: 'devise/sessions#destroy'
   end
 
+  authenticated :student do
+    root 'students#show', as: :authenticated_student_root
+  end
+
+  
 
   root 'welcome#home'
 
