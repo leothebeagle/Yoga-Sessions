@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  devise_for :students
   root 'welcome#home'
   get 'teachers/homepage' => "welcome#teacher_home"
 
