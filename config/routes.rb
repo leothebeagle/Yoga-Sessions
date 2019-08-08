@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   devise_for :teachers, :path => "accounts/teacher"
   # devise related student routes
 
-  devise_scope :teachers do
+  devise_scope :teacher do
     get '/teachers/login', to: 'devise/sessions#new'
   end
 
-  devise_scope :teachers do
+  devise_scope :teacher do
     get '/teachers/logout', to: 'devise/sessions#destroy'
   end
 
@@ -34,7 +34,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
   get 'teachers/homepage' => "welcome#teacher_home"
-  
+
     resources :programs, only: [:index, :show]
   # resources :students, only: [:show]
   
