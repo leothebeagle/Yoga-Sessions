@@ -2,6 +2,15 @@ Rails.application.routes.draw do
 
   devise_for :students
 
+  devise_scope :student do
+    get '/students/login', to: 'devise/sessions#new'
+  end
+
+  devise_scope :student do
+    get '/students/logout', to: 'devise/sessions#destroy'
+  end
+
+
   root 'welcome#home'
 
   
@@ -17,11 +26,8 @@ Rails.application.routes.draw do
   #   resources :programs, only: [:index]
   # end
 
-  resources :videos, only: [:show, :new, :create, :destroy, :update ]
 
-  resources :programs, only: [:show, :new, :create, :index, :update, :destroy]
 
-  resources :library_items, only: [:create]
   
   
     # get '/login' => "sessions#new"
