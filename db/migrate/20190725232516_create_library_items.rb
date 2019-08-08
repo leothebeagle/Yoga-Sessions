@@ -1,6 +1,6 @@
-class CreateStudentPrograms < ActiveRecord::Migration[5.2]
+class CreateLibraryItems < ActiveRecord::Migration[5.2]
   def change
-    create_table :student_programs do |t|
+    create_table :library_items do |t|
         t.integer :student_id
         t.integer :program_id
         t.boolean :favorited, default: false
