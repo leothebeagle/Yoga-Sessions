@@ -35,9 +35,9 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get 'teachers/homepage' => "welcome#teacher_home"
 
-  resources :programs, only: [:index, :show]
+  resources :programs, only: [:index, :show, :create, :update, :destroy]
   # resources :students, only: [:show]
-  resources :videos, only: [:show, :new, :create]
+  resources :videos, only: [:show, :new, :create, :update, :destroy]
   
   
 
