@@ -1,6 +1,9 @@
 class Teacher < ApplicationRecord
-    has_secure_password
-
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+    
     validates :first_name, presence: true
     
     validates :last_name, presence: true
@@ -9,8 +12,6 @@ class Teacher < ApplicationRecord
 
     validates :email, presence: true, uniqueness: true
 
-    validates :password, presence: true
-    validates :password_confirmation, presence: true
 
     has_many :videos
     has_many :programs

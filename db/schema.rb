@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_08_002904) do
+ActiveRecord::Schema.define(version: 2019_08_08_192346) do
 
   create_table "library_items", force: :cascade do |t|
     t.integer "student_id"
@@ -47,6 +47,19 @@ ActiveRecord::Schema.define(version: 2019_08_08_002904) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "bio"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_teachers_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
   end
 
   create_table "videos", force: :cascade do |t|

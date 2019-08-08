@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :teachers
   # devise related student routes
 
   devise_for :students, :path => "accounts"
