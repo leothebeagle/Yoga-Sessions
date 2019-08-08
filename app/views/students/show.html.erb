@@ -2,9 +2,10 @@
 
 <p>Glad to see you back!</p>
 
-<p> <%= %> </p>
-<p> <%= %> </p>
-<p> <%= %> </p>
+<p> <%= link_to "View Your Programs", student_programs_path(@student) %> </p>
+
+<p> <%= link_to "View Your Teacher", student_teachers_path(@student) %> </p>
+
 <p> <%= link_to "Logout", students_logout_path %> </p>
 
 
