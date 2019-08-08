@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  # devise related
+
   devise_for :students
 
   devise_scope :student do
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
+  resources :students, only: [:show]
   
   # get 'teachers/homepage' => "welcome#teacher_home"
 
