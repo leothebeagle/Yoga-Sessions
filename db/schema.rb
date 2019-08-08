@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2019_08_08_002904) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string "name"
+    t.string "title"
     t.string "description"
     t.string "duration"
     t.integer "teacher_id"
