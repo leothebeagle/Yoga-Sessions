@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
-    resources :programs, only: [:index]
+    resources :programs, only: [:index, :show]
   # resources :students, only: [:show]
   
   # get 'teachers/homepage' => "welcome#teacher_home"
