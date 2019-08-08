@@ -37,6 +37,7 @@ Rails.application.routes.draw do
 
   resources :programs, only: [:index, :show]
   # resources :students, only: [:show]
+  resources :videos, only: [:show, :new, :create]
   
   
 
