@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
     
     def show
-        current_student
+        @student = current_student
     end
 
     def new
