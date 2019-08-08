@@ -1,25 +1,22 @@
 class ProgramsController < ApplicationController
-    before_action :require_login, only: [:index, :show]
-
-    before_action :require_teacher_login
-    skip_before_action :require_teacher_login, only: [:index, :show]
+    
     
     def index
         if params.include?(:teacher_id)
-            current_teacher 
+            @current_teacher = current_teacher 
             @programs = current_teacher.programs 
         elsif params.include?(:student_id)
             @programs = current_student.programs
         else
-            current_teacher
-            current_student
+            # @current_teacher = current_teacher
+            @current_student = current_student
             @programs = Program.all
         end 
     end
 
     def show
-        current_student
-        current_teacher
+        @current_student = current_student
+        @current_teacher = current_teacher
         @program = Program.find_by(id: params[:id])
         @videos = @program.videos
     end
