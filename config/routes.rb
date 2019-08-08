@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
 
-  devise_for :teachers
+  devise_for :teachers, :path => "accounts/teacher"
   # devise related student routes
+
+  devise_scope :teachers do
+    get '/teachers/login', to: 'devise/sessions#new'
+  end
+
+  devise_scope :teachers do
+    get '/teachers/logout', to: 'devise/sessions#destroy'
+  end
+
 
   devise_for :students, :path => "accounts"
 
@@ -17,14 +26,19 @@ Rails.application.routes.draw do
     root 'students#show', as: :authenticated_student_root
   end
 
+  authenticated :teacher do
+    root 'teachers#show', as: :authenticated_teacher_root
+  end
+
  # Other routes
 
   root 'welcome#home'
-
+  get 'teachers/homepage' => "welcome#teacher_home"
+  
     resources :programs, only: [:index, :show]
   # resources :students, only: [:show]
   
-  # get 'teachers/homepage' => "welcome#teacher_home"
+  
 
   # resources :teachers, only: [:show, :new, :create] do
   #   resources :programs, only: [:new, :index, :show, :edit]
