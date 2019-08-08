@@ -35,15 +35,15 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get 'teachers/homepage' => "welcome#teacher_home"
 
-    resources :programs, only: [:index, :show]
+  resources :programs, only: [:index, :show]
   # resources :students, only: [:show]
   
   
 
-  # resources :teachers, only: [:show, :new, :create] do
-  #   resources :programs, only: [:new, :index, :show, :edit]
-  #   resources :videos, only: [:new, :index, :show, :edit]
-  # end
+  resources :teachers, only: [:show, :new, :create] do
+    resources :programs, only: [:new, :index, :show, :edit]
+    resources :videos, only: [:new, :index, :show, :edit]
+  end
 
   resources :students, only: [:show] do 
     resources :teachers, only: [:index]
