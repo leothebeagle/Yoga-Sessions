@@ -1,11 +1,12 @@
 class VideosController < ApplicationController
-    before_action :require_login, only: [:show]
-    before_action :require_teacher_login
-    skip_before_action :require_teacher_login, only: [:show]
+    # before_action :require_login, only: [:show]
+    # before_action :require_teacher_login
+    # skip_before_action :require_teacher_login, only: [:show]
    # the show action should require person to be logged in too.
 
     def index
-        @videos = current_teacher.videos 
+        @current_teacher = current_teacher
+        @videos = @current_teacher.videos 
     end
 
     def show
