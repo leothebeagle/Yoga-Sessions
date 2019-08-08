@@ -1,8 +1,12 @@
-<%= @current_student.first_name %> <%= @current_student.last_name %>
+<p>Hi, <%= @student.first_name %> <%= @student.last_name %></p>
+
+<p>Glad to see you back!</p>
+
+<p> <%= %> </p>
+<p> <%= %> </p>
+<p> <%= %> </p>
+<p> <%= link_to "Logout", students_logout_path %> </p>
 
 
-<p><%= link_to "View your teachers", student_teachers_path(@current_student) %></p>
-<p><%= link_to "View your library", student_programs_path(@current_student) %></p>
-<p><%= link_to "View all programs", programs_path %></p>
-<p><%= link_to "Logout", logout_path %></p>
+
 
