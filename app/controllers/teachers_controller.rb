@@ -10,7 +10,7 @@ class TeachersController < ApplicationController
     end
 
     def show
-        current_teacher
+        @current_teacher = current_teacher
     end
     
     def new
