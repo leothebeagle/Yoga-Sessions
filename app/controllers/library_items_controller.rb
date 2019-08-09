@@ -1,6 +1,6 @@
 class LibraryItemsController < ApplicationController
     def create 
-        program = Program.find_by(id: params[:library_item][:program_id])
+        program = Program.find_by(id: params[:program_id])
         # refactor to a method that can be called like this: current_student.add_to_library(program)
          
         if !current_student.programs.include?(program)

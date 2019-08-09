@@ -13,10 +13,16 @@
 
 <% if @current_student %>
   <%= form_tag('/library_items') do %>
-    <input name="library_item[program_id]" type="hidden" id="library_item_program_id" value="<%= @program.id %>"><br>
+    <input name="program_id" type="hidden" id="program_id" value="<%= @program.id %>"><br>
 
     <input type="submit" value='Add this program to your library'>
    <% end %>
+
+    <%= form_tag('/favorites') do %>
+      <input name="program_id" type="hidden" id="program_id" value="<%= @program.id %>"><br>
+
+      <input type="submit" value='Favorite this program!'>
+    <% end %>
 <% end %>
 
 <% if @current_teacher %>

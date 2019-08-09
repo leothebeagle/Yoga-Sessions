@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   resources :videos, only: [:show, :new, :create, :update, :destroy]
   
   resources :library_items, only: [:create]
+  resources :favorites, only: [:create]
   
   
 
