@@ -8,7 +8,7 @@ class ProgramsController < ApplicationController
         elsif params.include?(:student_id)
             @programs = current_student.programs
         else
-            # @current_teacher = current_teacher
+            @current_teacher = current_teacher
             @current_student = current_student
             @programs = Program.all
         end 
