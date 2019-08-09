@@ -16,6 +16,7 @@ class VideosController < ApplicationController
     end
 
     def new
+        @current_teacher = current_teacher
         @video = Video.new 
     end
 
