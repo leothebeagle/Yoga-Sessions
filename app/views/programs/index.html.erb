@@ -1,11 +1,4 @@
-<%= render partial: 'programs', locals: {programs: @programs} %>
+<%= render partial: 'programs', locals: {programs: @programs} %>    
 
-    <% if @current_teacher %>
-        <%= link_to "Create a new Program", new_teacher_program_path(@current_teacher) %><br>
-        <%= link_to "Back to profile page", teacher_path(@current_teacher) %>
-    <% end %>
-
-    <% if @current_student %>
-        <%= link_to "Back to profile page", student_path(@current_student) %>
-    <% end %>
+<%= programs_index_links%>
 
