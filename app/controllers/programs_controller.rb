@@ -3,7 +3,7 @@ class ProgramsController < ApplicationController
     
     def index
         if params.include?(:teacher_id)
-            @programs = current_teacher.programs
+            @programs = Program.by_teacher(current_teacher)
         elsif params.include?(:student_id)
             @programs = current_student.programs
         else
@@ -63,16 +63,16 @@ class ProgramsController < ApplicationController
         params.require(:program).permit(:name, :description, :teacher_id, video_ids: [])
     end
 
-    def require_teacher_login
-        return head(:forbidden) unless session.include? :teacher_id
-    end
+    # def require_teacher_login
+    #     return head(:forbidden) unless session.include? :teacher_id
+    # end
 
-    def require_login 
-        if session.include?(:teacher_id) || session.include?(:student_id) 
-            true 
-        else
-            return head(:forbidden)
-        end
+    # def require_login 
+    #     if session.include?(:teacher_id) || session.include?(:student_id) 
+    #         true 
+    #     else
+    #         return head(:forbidden)
+    #     end
     end
 
    
