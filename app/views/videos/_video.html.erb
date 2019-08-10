@@ -1,0 +1,23 @@
+<% if @video.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@video.errors.count, "error") %> prohibited this article from being saved:</h2>
+ 
+    <ul>
+    <% @video.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @video do |f| %>
+
+  Title: <%= f.text_field :title %><br><br>
+
+  Description: <%= f.text_area :description %><br><br>
+
+  Duration: <%= f.text_field :duration %> min<br><br>
+
+  <%= f.submit %>
+    
+<% end %>
