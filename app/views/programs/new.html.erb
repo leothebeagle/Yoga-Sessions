@@ -1,24 +1,6 @@
 <h2>Program new page</h2>
 
-<%= form_for @program do |f| %>
-    <p>
-    <%= f.label :name, "Program Name" %>
-    <%= f.text_field :name %>
-    </p>
-
-    <p>
-    <%= f.label :description, "Program Description" %>
-    <%= f.text_area :description %>
-    </p>
-
-    <p>
-    <%= f.label :videos, "Select Videos to Include in Program:"%>
-    <%= f.collection_check_boxes :video_ids, @videos, :id, :title %>
-    </p>
-
-    <%= f.submit %>
-
-<% end %>
+<%= render partial: 'program' %>
 
 <%= link_to "Back to profile page", teacher_path(@current_teacher) %><br>
 <%= link_to "Back to your programs", teacher_programs_path(@current_teacher) %>
