@@ -1,3 +1,17 @@
+<% if @program.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@program.errors.count, "error") %> prohibited this article from being saved:</h2>
+ 
+    <ul>
+    <% @program.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
 <%= form_for @program do |f| %>
     <p>
     <%= f.label :name, "Program Name" %>
