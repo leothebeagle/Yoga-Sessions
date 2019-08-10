@@ -3,18 +3,17 @@ class ProgramsController < ApplicationController
     
     def index
         if params.include?(:teacher_id)
-            @current_teacher = current_teacher 
-            @programs = current_teacher.programs 
+            @programs = current_teacher.programs
         elsif params.include?(:student_id)
             @programs = current_student.programs
         else
-            @current_teacher = current_teacher
-            @current_student = current_student
             @programs = Program.all
         end 
     end
 
     def show
+        # these two lines of code are there because no partials or helpers 
+        # have been defined to conditionally display things in the view
         @current_student = current_student
         @current_teacher = current_teacher
         @program = Program.find_by(id: params[:id])
