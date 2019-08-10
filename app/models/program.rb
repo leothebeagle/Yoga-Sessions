@@ -7,3 +7,4 @@ class Program < ApplicationRecord
     has_many :library_items 
     has_many :students, through: :library_items 
 end
+
