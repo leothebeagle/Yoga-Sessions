@@ -10,13 +10,14 @@
   </head>
 
   <body>
-  
+  <h3>Yoga Sessions</h3>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <% flash.each do |name, msg| -%>
+  <!-- <% flash.each do |name, msg| %>
      <%= content_tag :div, msg, class: name %>
-   <% end %>
+   <% end %> -->
 
     <%= yield %>
   </body>
