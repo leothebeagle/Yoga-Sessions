@@ -7,7 +7,8 @@
 <h3>Email: <%= @current_teacher.email %></h3>
 
 
-
+<h2>Your programs:</h2>
+<%= render partial: 'programs/programs', locals: {programs: @current_teacher.programs} %>
 
 <p><%= link_to "View your programs", teacher_programs_path(@current_teacher) %> </p>
 <p><%= link_to "View all programs", programs_path %></p>
