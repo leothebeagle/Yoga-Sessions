@@ -1,6 +1,6 @@
 class ProgramsController < ApplicationController
   
-    before_action :authenticate_teacher!, only: [:new, :create, :edit, :update]
+    before_action :authenticate_teacher!, only: [:new, :create, :edit, :update, :destroy]
     before_action :require_login
 
     
