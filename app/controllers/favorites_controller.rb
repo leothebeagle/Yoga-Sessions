@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
         
         if current_student.programs.include?(program)
             student_program = current_student.library_items.find_by(program_id: program.id)
-            student_program.favorited = true
+            student_program.update(favorited: true)
             flash[:notice] = "You have favorited this program!"
             redirect_to program_path(program) 
         else
