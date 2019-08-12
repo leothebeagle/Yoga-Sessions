@@ -1,13 +1,13 @@
 <h3>Teacher info section:</h3>
 
-<%= render partial: 'teacher', locals: {teacher: @current_teacher } %>
+<%= render partial: 'teacher', locals: {teacher: @teacher } %>
 
 <h3>Your programs:</h3>
-<%= render partial: 'programs/programs', locals: {programs: @current_teacher.programs} %>
+<%= render partial: 'programs/programs', locals: {programs: @teacher.programs} %>
 
-<p><%= link_to "View your programs", teacher_programs_path(@current_teacher) %> </p>
+<p><%= link_to "View your programs", teacher_programs_path(@teacher) %> </p>
 <p><%= link_to "View all programs", programs_path %></p>
-<p><%= link_to "View all your videos", teacher_videos_path(@current_teacher) %></p>
+<p><%= link_to "View all your videos", teacher_videos_path(@teacher) %></p>
 
 
 <p> <%= link_to "Logout", teachers_logout_path %> </p>
