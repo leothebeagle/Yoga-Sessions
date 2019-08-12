@@ -15,4 +15,8 @@ class Student < ApplicationRecord
   has_many :programs, through: :library_items 
   has_many :teachers, through: :programs 
 
+  def favorite_programs
+    favorited_library_items = self.library_items.where(favorited: true)
+    favorite_programs = favorited_library_items.collect { |item| item.program }
+  end
 end
