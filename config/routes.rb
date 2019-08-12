@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   end
 
 
-  devise_for :students, :path => "students/account"
+  devise_for :student, :path => "students/account", controllers: {omniauth_callbacks: "student/omniauth_callbacks"}
+
+  devise_scope :student do 
+    delete 'logout', :to => 'devise/sessions#destroy', :as => :destroy_student_ig_session  
+  end
 
   devise_scope :student do
     get '/students/login', to: 'devise/sessions#new'
