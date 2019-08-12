@@ -1,5 +1,8 @@
 class ProgramsController < ApplicationController
-    
+  
+    before_action :authenticate_teacher!, only: [:new, :create, :edit, :update]
+    before_action :require_login
+
     
     def index
         if params.include?(:teacher_id)
@@ -11,18 +14,14 @@ class ProgramsController < ApplicationController
         end 
     end
 
-    def show
-        # these two lines of code are there because no partials or helpers 
-        # have been defined to conditionally display things in the view
-        @current_student = current_student
-        @current_teacher = current_teacher
-        @program = Program.find_by(id: params[:id])
-        @videos = @program.videos
-    end
-
     def new
         @program = Program.new 
         @videos = current_teacher.videos 
+    end
+    
+    def show
+        @program = Program.find_by(id: params[:id])
+        @videos = @program.videos
     end
 
     def create
@@ -63,16 +62,13 @@ class ProgramsController < ApplicationController
         params.require(:program).permit(:name, :description, :teacher_id, video_ids: [])
     end
 
-    # def require_teacher_login
-    #     return head(:forbidden) unless session.include? :teacher_id
-    # end
 
-    # def require_login 
-    #     if session.include?(:teacher_id) || session.include?(:student_id) 
-    #         true 
-    #     else
-    #         return head(:forbidden)
-    #     end
+    def require_login
+        if current_student || current_teacher
+            true 
+        else
+            return head(:forbidden)
+        end
     end
 
    
