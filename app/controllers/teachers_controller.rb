@@ -10,7 +10,11 @@ class TeachersController < ApplicationController
     end
 
     def show
-        @teacher = Teacher.find(params[:id])
+        if params[:id]
+            @teacher = Teacher.find(params[:id])
+        else
+            @teacher = current_teacher
+        end
     end
     
     def new
