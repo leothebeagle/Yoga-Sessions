@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   devise_for :teachers, :path => "teachers/account"
-  # devise related student routes
 
   devise_scope :teacher do
     get '/teachers/login', to: 'devise/sessions#new'
