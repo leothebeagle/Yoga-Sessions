@@ -16,13 +16,13 @@
     <%= form_tag('/library_items') do %>
       <input name="program_id" type="hidden" id="program_id" value="<%= @program.id %>"><br>
 
-      <input type="submit" value='Add this program to your library'>
+      <input type="submit" value='Add this program to your library' class="btn btn-secondary btn-sm">
     <% end %>
 
       <%= form_tag('/favorites') do %>
         <input name="program_id" type="hidden" id="program_id" value="<%= @program.id %>"><br>
 
-        <input type="submit" value='Favorite this program!'>
+        <input type="submit" value='Favorite this program!' class="btn btn-secondary btn-sm">
       <% end %>
   <% end %>
 </div>
