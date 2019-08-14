@@ -1,29 +1,31 @@
-<h2><%= @program.name %> by: <%= @program.teacher.first_name %> <%= @program.teacher.last_name %></h2>
-<h3><%= @program.description %></h3>
+<div class="container">
+  <h2><%= @program.name %> by: <%= @program.teacher.first_name %> <%= @program.teacher.last_name %></h2>
+  <h3><%= @program.description %></h3>
 
-<h4> Videos </h4>
+  <h4> Videos </h4>
 
-<% @videos.each do |video| %>
-    <p>
-        <li>Title: <%= video.title %></li>
-        <li>Description: <%= video.description %></li>
-        <li>Duration: <%= video.duration %> min </li>
-    </p>
-<% end %>
+  <% @videos.each do |video| %>
+      <p>
+          <li>Title: <%= video.title %></li>
+          <li>Description: <%= video.description %></li>
+          <li>Duration: <%= video.duration %> min </li>
+      </p>
+  <% end %>
 
-<% if @current_student %>
-  <%= form_tag('/library_items') do %>
-    <input name="program_id" type="hidden" id="program_id" value="<%= @program.id %>"><br>
-
-    <input type="submit" value='Add this program to your library'>
-   <% end %>
-
-    <%= form_tag('/favorites') do %>
+  <% if @current_student %>
+    <%= form_tag('/library_items') do %>
       <input name="program_id" type="hidden" id="program_id" value="<%= @program.id %>"><br>
 
-      <input type="submit" value='Favorite this program!'>
+      <input type="submit" value='Add this program to your library'>
     <% end %>
-<% end %>
+
+      <%= form_tag('/favorites') do %>
+        <input name="program_id" type="hidden" id="program_id" value="<%= @program.id %>"><br>
+
+        <input type="submit" value='Favorite this program!'>
+      <% end %>
+  <% end %>
+</div>
 
 <% if @current_teacher %>
   <%= link_to "Back to your programs", teacher_programs_path(@current_teacher)%><br>
