@@ -37,6 +37,10 @@ gem 'thin'
 
 gem 'devise'
 
+gem 'bootstrap', '~> 4.3.1'
+
+gem 'jquery-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
