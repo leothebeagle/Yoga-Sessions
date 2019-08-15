@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     get '/teachers/logout', to: 'devise/sessions#destroy'
   end
 
+  authenticated :teacher do
+    root 'teachers#show', as: :authenticated_teacher_root
+  end
+
 
   devise_for :student, :path => "students/account", controllers: {omniauth_callbacks: "student/omniauth_callbacks"}
 
@@ -29,9 +33,7 @@ Rails.application.routes.draw do
     root 'students#show', as: :authenticated_student_root
   end
 
-  authenticated :teacher do
-    root 'teachers#show', as: :authenticated_teacher_root
-  end
+  
 
 #  # Other routes
 
