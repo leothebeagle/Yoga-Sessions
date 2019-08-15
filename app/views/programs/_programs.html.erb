@@ -1,8 +1,8 @@
 <% programs.each do |program| %>
     <p>
-        <h4><%= link_to program.name, program_path(program) %></h4><br>
+        <strong><%= link_to program.name, program_path(program) %></strong><br>
         <%= program.description %><br>
         By: <%= link_to "#{program.teacher.first_name} "  "#{program.teacher.last_name}", teacher_path(program.teacher) %><br>
-        
+
     </p>
 <% end %>
