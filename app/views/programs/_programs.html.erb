@@ -2,7 +2,19 @@
     <p>
         <strong><%= link_to program.name, program_path(program) %></strong><br>
         <%= program.description %><br>
+        
         By: <%= link_to "#{program.teacher.first_name} "  "#{program.teacher.last_name}", teacher_path(program.teacher) %><br>
 
+        <% if current_student.favorite_programs.include?(program) %>
+            <%= form_tag('/favorites', method: :delete) do %>
+                <input name="program_id" type="hidden" id="program_id" value="<%= program.id %>"><br>
+                <input type="submit" value='UnFavorite this program!' class="btn btn-secondary btn-sm">
+            <% end %>
+        <% elsif !current_student.favorite_programs.include?(program) %>
+            <%= form_tag('/favorites') do %>
+                    <input name="program_id" type="hidden" id="program_id" value="<%= program.id %>"><br>
+                    <input type="submit" value='Favorite this program!' class="btn btn-secondary btn-sm">
+            <% end %>
+        <% end %>
     </p>
 <% end %>
