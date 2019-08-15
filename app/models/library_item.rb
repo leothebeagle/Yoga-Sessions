@@ -1,5 +1,4 @@
 class LibraryItem < ApplicationRecord
-    before_action :authenticate_student!
 
     belongs_to :student 
     belongs_to :program
