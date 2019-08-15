@@ -17,6 +17,11 @@ class Student < ApplicationRecord
     self.programs.include?(program)
   end
 
+  def add_program_to_library(program)
+    self.programs << program 
+    self.save
+  end
+
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |student|
       student.email = auth.info.nickname + "@student.com"
