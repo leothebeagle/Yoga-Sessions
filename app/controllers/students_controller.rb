@@ -4,6 +4,9 @@ class StudentsController < ApplicationController
         @student = current_student
     end
 
+    #actually might not need the new and create actions since user registration
+    # is being handled by devise
+
     def new
         @student = Student.new
     end

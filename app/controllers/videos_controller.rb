@@ -51,6 +51,8 @@ class VideosController < ApplicationController
         params.require(:video).permit(:title, :description, :duration)
     end
 
+     # could possibly include these in the application controller so that
+     # its available to multiple controllers.
     def require_teacher_login
         return head(:forbidden) unless session.include?(:teacher_id)
     end

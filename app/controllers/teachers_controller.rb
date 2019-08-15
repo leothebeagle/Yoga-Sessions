@@ -17,6 +17,8 @@ class TeachersController < ApplicationController
         end
     end
     
+    # new and create actions below can probably be ommitted
+    # we are using devise for user registration.
     def new
        @teacher = Teacher.new
     #    (first_name: "test", last_name: "test", email: "test", bio: "test", password_digest: "jkjk")

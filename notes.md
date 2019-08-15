@@ -135,8 +135,6 @@ to-do's:
 - [x] Add links to link up all the pages.
 - [x] Use partials in your views.
 - [x] Fix up the favoriting mechanism.
-- Fix up your routes. Should probably get rid of all the default routes for sessions
-that come with devise. Use custom routes for handling sessions. 
 - Refactor.
 - Implement bootstrap to style everything.
 
@@ -150,6 +148,20 @@ dont display the logout button)
 - Also, when a student is viewing the program show page, the links should be dynamic:
 ex: if the program is already in the student's library, do not include the link "add program to library"
 same goes for favoriting a program. if its favorited, then don't display the button
+
+Possible way to deal with layouts:
+
+The nav bar and layout will be slightly different for student and teacher
+- most noticeable difference will be:
+- the different logout paths
+- The programs drop down in students will have: 'my library' and 'all programs'
+- vs. the programs dropdown for teachers will have 'create program' and 'all programs'
+- will need to deal with displaying conditional links so will most likely need helper methods for 
+each type of view (this will pop into a specific layout via yield) ex: program show links, teacher show links, program index links (incl. the ones nested under teachers)
+
+A useful resource for customizing devise login forms using bootstrap:
+
+https://stackoverflow.com/questions/29835455/devise-login-with-bootstrap-in-rails
 
 
 

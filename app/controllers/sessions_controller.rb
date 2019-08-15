@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
 
+    #actually don't need this controller since we are using devise
+
+
     def new   
     end
 

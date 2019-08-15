@@ -2,7 +2,7 @@ class FavoritesController < ApplicationController
 
     def create 
         program = Program.find(params[:program_id])
-        
+        #refactor point
         if current_student.programs.include?(program)
             student_program = current_student.library_items.find_by(program_id: program.id)
             student_program.update(favorited: true)
