@@ -45,9 +45,10 @@ Rails.application.routes.draw do
   resources :videos, only: [:show, :new, :create, :update, :destroy]
   
   resources :library_items, only: [:create]
-  resources :favorites, only: [:create]
+  resources :favorites, only: [:create, :destroy]
   
-  
+  post 'favorites' => 'favorites#create'
+  delete 'favorites' => 'favorites#destroy'
 
   resources :teachers, only: [:show, :new, :create] do
     resources :programs, only: [:new, :index, :show, :edit]
