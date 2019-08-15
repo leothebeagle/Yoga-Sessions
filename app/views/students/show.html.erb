@@ -1,10 +1,6 @@
-<p>Hi, <%= @student.first_name %> <%= @student.last_name %></p>
+<%= render partial: 'show_student', locals: {student: @student } %>
 
-<p>Glad to see you back!</p>
 
-<p>Favorited Programs:<p>
-
-<%= render partial: 'programs/programs', locals: {programs: @student.favorite_programs } %>
 
 <p> <%= link_to "View Your Programs", student_programs_path(@student) %> </p>
 
