@@ -18,9 +18,9 @@ class FavoritesController < ApplicationController
         end
     end
 
-    def destroy
+    def destroy 
         program = Program.find(params[:program_id])
-        Library_item.unfavorite(current_student, program)
+        LibraryItem.unfavorite(current_student, program)
         flash[:notice] = "You have removed this program from your favorites list!"
         redirect_to program_path(program)
     end
