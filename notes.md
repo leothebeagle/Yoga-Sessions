@@ -125,7 +125,31 @@ Second sprint (30 min):
 - Implement login via oauth and instagram
      
     
+to-do's:
 
+- [x] Implement ability for a student to add programs to their library.
+- [x] Implement the user submittable attribute.
+- [x] Implement scope method.
+- [x] Implement authorization in controllers using devise. 
+- [x] Implement oauth using devise and instagram.
+- [x] Add links to link up all the pages.
+- [x] Use partials in your views.
+- [x] Fix up the favoriting mechanism.
+- Fix up your routes. Should probably get rid of all the default routes for sessions
+that come with devise. Use custom routes for handling sessions. 
+- Refactor.
+- Implement bootstrap to style everything.
+
+to-do's:
+
+- Have a navbar that is dynamic, that changes according to whether or not a user is a student
+or a teacher. And also, depending on whether or not a user is logged in. 
+(don't want login link to show if a user is logged in. Also, change it up for teachers. Also, if youre logged out
+dont display the logout button)
+- style the flash notes
+- Also, when a student is viewing the program show page, the links should be dynamic:
+ex: if the program is already in the student's library, do not include the link "add program to library"
+same goes for favoriting a program. if its favorited, then don't display the button
 
 
 
