@@ -5,10 +5,10 @@
 
         By: <%= link_to "#{program.teacher.first_name} "  "#{program.teacher.last_name}", teacher_path(program.teacher) %><br>
         
-        <% if current_student.has_program?(program) %>
+        <% if current_student && current_student.has_program?(program) %>
             <%= render partial: 'programs/favoriting_links', locals: {program: program} %>
             <%= render partial: 'programs/update_library_links', locals: {program: program} %>
-        <% elsif !current_student.has_program?(program) %>
+        <% elsif current_student && !current_student.has_program?(program) %>
             <%= render partial: 'programs/update_library_links', locals: {program: program}%>
         <% end %>
 
