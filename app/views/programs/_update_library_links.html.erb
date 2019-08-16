@@ -1,0 +1,16 @@
+
+<% if !current_student.has_program?(program) %>
+    <%= form_tag('/library_items') do %>
+      <input name="program_id" type="hidden" id="program_id" value="<%= program.id %>"><br>
+
+      <input type="submit" value='Add this program to your library' class="btn btn-secondary btn-sm">
+    <% end %>
+
+<% elsif current_student.has_program?(program) %>
+    <%= form_tag('/library_items', method: :delete) do %>
+
+      <input name="program_id" type="hidden" id="program_id" value="<%= program.id %>"><br>
+
+      <input type="submit" value='Remove this program from your library' class="btn btn-secondary btn-sm">
+    <% end %>
+<% end %>
