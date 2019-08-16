@@ -2,19 +2,21 @@
     <p>
         <strong><%= link_to program.name, program_path(program) %></strong><br>
         <%= program.description %><br>
-        
-        By: <%= link_to "#{program.teacher.first_name} "  "#{program.teacher.last_name}", teacher_path(program.teacher) %><br>
 
-        <% if current_student.favorite_programs.include?(program) %>
-            <%= form_tag('/favorites', method: :delete) do %>
-                <input name="program_id" type="hidden" id="program_id" value="<%= program.id %>"><br>
-                <input type="submit" value='UnFavorite this program!' class="btn btn-secondary btn-sm">
-            <% end %>
-        <% elsif !current_student.favorite_programs.include?(program) %>
-            <%= form_tag('/favorites') do %>
-                    <input name="program_id" type="hidden" id="program_id" value="<%= program.id %>"><br>
-                    <input type="submit" value='Favorite this program!' class="btn btn-secondary btn-sm">
-            <% end %>
+        By: <%= link_to "#{program.teacher.first_name} "  "#{program.teacher.last_name}", teacher_path(program.teacher) %><br>
+        <% if current_student.has_program?(program) %>
+            <%= render partial: 'favoriting_links', locals: {program: program} %>
+            <%= render partial: 'update_library_links', locals: {program: program} %>
+        <% elsif !current_student.has_program?(program) %>
+            <%= render partial: 'update_library_links', locals: {program: program}%>
         <% end %>
+
     </p>
 <% end %>
+
+if student has the program 
+    render the favoriting links (conditional)
+    and the add program links (conditional)
+if the student doesn't have the program
+    render only the add programs link 
+end
