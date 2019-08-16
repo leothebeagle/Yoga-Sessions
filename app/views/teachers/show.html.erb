@@ -1,8 +1,9 @@
 <h3>Teacher info section:</h3>
 
 <%= render partial: 'teacher', locals: {teacher: @teacher } %>
-
+<br>
 <strong>Programs:</strong>
+<br>
 <%= render partial: 'programs/programs', locals: {programs: @teacher.programs} %>
 
 
