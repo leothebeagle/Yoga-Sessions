@@ -16,7 +16,7 @@ module ProgramsHelper
         end
     end
 
-    def student_links 
+    def student_links
         if @programs == current_student.programs
 		    link_to("View all programs", programs_path)
         else
@@ -24,4 +24,12 @@ module ProgramsHelper
         end
     end
 
+    # def display_programs_index_links(program)
+    #     if current_student.has_program?(program)
+    #         "render partial: 'favoriting_links', locals: {program: #{program}"
+    #         "render partial: 'update_library_links, locals: {program: #{program}"
+    #     elsif !current_student.has_program?(program)
+    #         render partial: 'update_library_links'
+    #     end
+    # end
 end
