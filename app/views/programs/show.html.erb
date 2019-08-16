@@ -1,37 +1,10 @@
 <div class="container">
-  <h2><%= @program.name %> by: <%= @program.teacher.first_name %> <%= @program.teacher.last_name %></h2>
-  <h3><%= @program.description %></h3>
+  <strong><%= @program.name %> by: <%= @program.teacher.first_name %> <%= @program.teacher.last_name %></strong>
+  <p><strong><%= @program.description %></strong></p>
 
-  <h4> Videos </h4>
+  <strong> Videos </strong>
 
-  <% @videos.each do |video| %>
-      <p>
-          <li>Title: <%= video.title %></li>
-          <li>Description: <%= video.description %></li>
-          <li>Duration: <%= video.duration %> min </li>
-      </p>
-  <% end %>
+  <%= render partial: 'videos/videos_index', locals: {videos: @program.videos}%>
 
-  <% if @current_student %>
-    <%= form_tag('/library_items') do %>
-      <input name="program_id" type="hidden" id="program_id" value="<%= @program.id %>"><br>
-
-      <input type="submit" value='Add this program to your library' class="btn btn-secondary btn-sm">
-    <% end %>
-
-      <%= form_tag('/favorites') do %>
-        <input name="program_id" type="hidden" id="program_id" value="<%= @program.id %>"><br>
-
-        <input type="submit" value='Favorite this program!' class="btn btn-secondary btn-sm">
-      <% end %>
-  <% end %>
+  
 </div>
-
-<% if @current_teacher %>
-  <%= link_to "Back to your programs", teacher_programs_path(@current_teacher)%><br>
-  <%= link_to "Edit Program", edit_teacher_program_path(@current_teacher, @program)%><br>
-  <%= form_tag program_path(@program), method: "delete" do %>
-    <%= submit_tag "Delete this program" %>
-  <% end %>
-<% end %>
-
