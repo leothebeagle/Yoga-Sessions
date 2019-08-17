@@ -167,3 +167,9 @@ https://stackoverflow.com/questions/29835455/devise-login-with-bootstrap-in-rail
 
 
 
+to-do's
+
+for teacher:
+
+need to add in links to create, edit and delete programs
+need to add in links to create, edit and delete videos
