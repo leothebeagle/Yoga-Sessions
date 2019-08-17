@@ -17,7 +17,7 @@ class Teacher < ApplicationRecord
     has_many :programs
     has_many :students, through: :programs 
 
-    def has_program 
+    def has_program?(program)
       self.programs.include?(program)
     end
 end

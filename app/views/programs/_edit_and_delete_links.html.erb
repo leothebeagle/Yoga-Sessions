@@ -1,0 +1,9 @@
+
+<%= form_tag program_path(program), method: "delete" do %>
+    <input name="program_id" type="hidden" id="program_id" value="<%= program.id %>"> <br>
+    <input type="submit" value="Delete Program" class="btn btn-secondary btn-sm"> 
+<% end %>
+
+
+<%= link_to "Edit program", edit_teacher_program_path(current_teacher, program) %>
+

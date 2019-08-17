@@ -8,7 +8,8 @@ class ProgramsController < ApplicationController
         if params.include?(:teacher_id)
             @programs = Program.by_teacher(current_teacher)
         elsif params.include?(:student_id)
-            @programs = current_student.programs
+            @student = Student.find(params[:student_id])
+            @programs = @student.programs
         else
             @programs = Program.all
         end 
@@ -20,8 +21,7 @@ class ProgramsController < ApplicationController
     end
     
     def show
-        @program = Program.find_by(id: params[:id])
-        
+        @program = Program.find_by(id: params[:id]) 
     end
 
     def create
@@ -52,7 +52,7 @@ class ProgramsController < ApplicationController
     end
 
     def destroy
-        Program.find(params[:id]).destroy 
+        Program.find(params[:program_id]).destroy 
         redirect_to teacher_programs_path(current_teacher)
     end
 
