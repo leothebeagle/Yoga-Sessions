@@ -4,6 +4,7 @@ class Student::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @student = Student.from_omniauth(request.env["omniauth.auth"])
 
         if @student.persisted?
+          
           sign_in_and_redirect @student, event: :authentication
           set_flash_message(:notice, :success, kind: "Instagram") if is_navigational_format?
         else
