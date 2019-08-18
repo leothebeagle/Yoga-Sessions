@@ -9,8 +9,9 @@ class Student < ApplicationRecord
   has_many :teachers, through: :programs 
 
   def favorite_programs
-    favorited_library_items = self.library_items.where(favorited: true)
-    favorite_programs = favorited_library_items.collect { |item| item.program }
+    favorited_library_items = LibraryItem.where(student_id: self.id, favorited:true)
+    # favorited_library_items = self.library_items.where(favorited: true)
+    favorited_programs = favorited_library_items.collect { |item| item.program } if favorited_library_items !=nil
   end
 
   def has_program?(program)

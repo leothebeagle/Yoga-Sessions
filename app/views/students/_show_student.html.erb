@@ -1,7 +1,9 @@
+
 <p>Hi, <%= student.first_name %> <%= student.last_name %></p>
 
 <p>Glad to see you back!</p>
 
 <p>Favorited Programs:<p>
 
-<%= render partial: 'programs/programs', locals: {programs: @student.favorite_programs} %>
+
+<%= render partial: 'programs/programs', locals: {programs: student.favorite_programs} %>
