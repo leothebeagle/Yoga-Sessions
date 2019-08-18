@@ -173,3 +173,33 @@ for teacher:
 
 need to add in links to create, edit and delete programs
 need to add in links to create, edit and delete videos
+
+fix sing in via instagram. problem with getting nil back with student.favorite programs => the show page isnt rendering because it 
+cant execute a mehtod on nil.
+
+
+The return value is different when you query a model using where, or find_by or find
+
+where:
+
+[#<LibraryItem:0x007fe868724a90
+  id: 14,
+  student_id: 1,
+  program_id: 7,
+  favorited: true,
+  created_at: Sat, 17 Aug 2019 14:24:48 UTC +00:00,
+  updated_at: Sat, 17 Aug 2019 14:35:12 UTC +00:00>]
+
+  gives you the record in array format
+
+  find_by:
+
+  #<LibraryItem:0x007fe86f131a50
+ id: 14,
+ student_id: 1,
+ program_id: 7,
+ favorited: true,
+ created_at: Sat, 17 Aug 2019 14:24:48 UTC +00:00,
+ updated_at: Sat, 17 Aug 2019 14:35:12 UTC +00:00>
+
+ returns individual objects only
