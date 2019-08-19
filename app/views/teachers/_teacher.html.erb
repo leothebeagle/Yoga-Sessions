@@ -3,3 +3,9 @@
 <strong>Bio:</strong> <%= teacher.bio %><br>
 
 <strong>Email:</strong> <%= teacher.email %><br>
+
+<%= link_to "create a new video", new_teacher_video_path(current_teacher) %><br>
+<%= link_to "create a new program", new_teacher_program_path(current_teacher) %><br>
+<%= link_to "see your programs", teacher_programs_path(current_teacher) %><br>
+<%= link_to "see all programs", programs_path %><br>
+
