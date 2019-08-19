@@ -1,20 +1,5 @@
 class ApplicationController < ActionController::Base
     before_action :configure_permitted_parameters, if: :devise_controller?
-    # def teacher? 
-    #     !!session[:teacher_id]
-    # end
-
-    # def student? 
-    #     !!student[:student_id]
-    # end
-
-    # def current_teacher
-    #     @current_teacher ||= @current_teacher = Teacher.find_by(id: session[:teacher_id])
-    # end
-
-    # def current_student
-    #     @current_student ||= @current_student = Student.find_by(id: session[:student_id])
-    # end
 
     protected 
 
@@ -29,5 +14,5 @@ class ApplicationController < ActionController::Base
             current_student
         end
     end
-
+    
 end
