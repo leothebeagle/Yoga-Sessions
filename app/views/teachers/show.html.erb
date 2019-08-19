@@ -1,10 +1,15 @@
-<h3>Teacher info section:</h3>
 
-<%= render partial: 'teacher', locals: {teacher: @teacher } %>
-<br>
-<strong>Programs:</strong>
-<br>
-<%= render partial: 'programs/programs', locals: {programs: @teacher.programs} %>
+<div class="container" >
+    <p><strong>Teacher info section:</strong></p>
+    <%= render partial: 'teacher', locals: {teacher: @teacher } %>
+</div>
+
+
+
+<div class="container">
+    <p><strong>Programs:</strong></p>
+    <%= render partial: 'programs/programs', locals: {programs: @teacher.programs} %>
+</div>
 
 
 
