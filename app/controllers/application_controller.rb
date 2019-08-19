@@ -22,4 +22,12 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
     end
 
+    def after_sign_in_path_for(resource)
+        if current_teacher
+            current_teacher 
+        elsif current_student
+            current_student
+        end
+    end
+
 end
