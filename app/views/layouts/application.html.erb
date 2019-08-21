@@ -10,19 +10,17 @@
   </head>
 
   <body>
-  <h3>Yoga Sessions</h3>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% flash.each do |name, msg| -%>
+     <%= content_tag :div, msg, class: "#{name} alert alert-info", role: alert %>
+  <% end %>
 
-  <!-- <% flash.each do |name, msg| %>
-     <%= content_tag :div, msg, class: name %>
-   <% end %> -->
-
-
-  <!-- Here will include bootstrap html for navbar -->
+ <!-- > <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p> -->
 
 
     <%= yield %>
+
   </body>
+
 </html>
