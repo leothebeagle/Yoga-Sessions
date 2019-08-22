@@ -15,10 +15,9 @@
      <%= content_tag :div, msg, class: "#{name} alert alert-info", role: alert %>
   <% end %>
 
-  <%= render partial:'navbars/nav_student_logged_out' %>
+  <%= navbar %>
 
-
-    <%= yield %>
+  <%= yield %>
 
   </body>
 
