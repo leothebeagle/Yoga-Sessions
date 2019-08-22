@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="<%= teachers_homepage_path %>"> Yoga Sessions </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item active">
+          <a class="nav-link" href="<%= teacher_path(current_teacher) %>">Profile</a>
+        </li>
+
+        
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Programs
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<%= programs_path %>">All Programs</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="<%= teacher_programs_path(current_teacher)%>">Your Programs</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="<%= new_teacher_program_path(current_teacher)%>">Create Program</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Videos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<%= new_teacher_video_path(current_teacher) %>">Create Video</a>
+        </li>
+        
+         <li class="nav-item active">
+            <a class="btn btn-outline-primary" href="<%= teachers_logout_path %>">Logout</a>
+        </li>
+
+      </ul>
+    </div>
+
+  </nav>
+
+  
