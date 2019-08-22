@@ -203,3 +203,76 @@ where:
  updated_at: Sat, 17 Aug 2019 14:35:12 UTC +00:00>
 
  returns individual objects only
+
+
+ Teacher delete and edit links:
+<input name="program_id" type="hidden" id="program_id" value="<%= program.id %>">
+ <%= form_tag program_path(@program), method: "delete" do %>
+    <%= submit_tag "Delete this program" %>
+  <% end %>
+
+  <%= form_for @video do |f| %>
+
+    Title: <%= f.text_field :title %><br><br>
+
+    Description: <%= f.text_area :description %><br><br>
+
+    Duration: <%= f.text_field :duration %> min<br><br>
+
+    <%= f.submit %>
+
+<% end %>
+
+Points for navbar:
+
+The navbar starts with the root homepage which shows the options for signing up or logging in or viewing the teacher homepage
+
+so right off the bat we have two homepages: the standard homepage and the teacher homepage
+
+standard homepage:
+
+- can have a photo, a description of the application, and a how-to-use
+- links for a user that's not logged-in:
+    1. logo: a link to the standard homepage
+    2. login
+    3. sign-up
+    4. teacher's home
+
+- Once a User logs in there should be a different set of links:
+    ~ The login, signup links, and teacher's homepage links will go away
+    ~ There should be a profile link that takes user to student show page
+    1. logo: a link to the standard homepage
+    2. programs drop down: your programs, all programs, favorited programs
+    3. Teachers drop down: your teachers, all teachers
+    4. profile link
+    5. logout link
+
+teacher homepage:
+
+- can also have a photo, a description of the application, and a how-to-use from a teacher's perspective
+- links for a teacher that's not logged-in:
+    1. logo: a link to the teacher homepage
+    2. login
+    3. sign-up
+    4. teacher's home
+    
+- Once a teacher logs in there should also be a different set of links
+    ~ The login link will go away
+    ~ There should be a profile link that takes user to teacher show page
+
+    1. logo: a link to the teacher homepage
+    2. programs drop down: your programs, all programs, create a new program
+    3. videos drop down: your videos, create a new video
+    3. Teachers drop down: your teachers, all teachers
+    4. profile link
+    5. logout link
+    
+
+to-dos:
+
+- just create a navbar for a student that is not logged in. 
+    some ideas: perhaps login can be a dropdown menu that allows regular login or login with instagram?
+- you can then move that to a partial
+- you can then create another partial for a teacher that isn't logged in
+- Actually, you might as well just make a partial for each navbar you want. so if a student is logged in and if a teacher is logged in.
+- you can then write a helper method that will determine which type of user is viewing the page and then render the partial accordingly. 
