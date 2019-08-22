@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   post 'favorites' => 'favorites#create'
   delete 'favorites' => 'favorites#destroy'
 
-  resources :teachers, only: [:show, :new, :create] do
+  resources :teachers, only: [:show, :new, :create, :index] do
     resources :programs, only: [:new, :index, :show, :edit]
     resources :videos, only: [:new, :index, :show, :edit]
   end
