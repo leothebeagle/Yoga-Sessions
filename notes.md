@@ -276,3 +276,18 @@ to-dos:
 - you can then create another partial for a teacher that isn't logged in
 - Actually, you might as well just make a partial for each navbar you want. so if a student is logged in and if a teacher is logged in.
 - you can then write a helper method that will determine which type of user is viewing the page and then render the partial accordingly. 
+
+
+
+Link to the blog post:
+
+https://leothebeagle.github.io/omniauth_with_instagram_and_devise
+
+Link to youtube videos:
+
+Demo:
+
+Walkthrough:
+
+Link to github repo:
+
