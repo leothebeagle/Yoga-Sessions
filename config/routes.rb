@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
 
+   #routes for registration and login with devise.
   devise_for :teachers, :path => "teachers/account"
-
+ 
+  #custom RESTFUL route for logging in
   devise_scope :teacher do
     get '/teachers/login', to: 'devise/sessions#new'
   end
 
+  #custom RESTFUL route for logging out
   devise_scope :teacher do
     get '/teachers/logout', to: 'devise/sessions#destroy'
   end
 
+  
   devise_for :student, :path => "students/account", controllers: {omniauth_callbacks: "student/omniauth_callbacks"}
 
   devise_scope :student do 
@@ -49,6 +53,8 @@ Rails.application.routes.draw do
     resources :teachers, only: [:index]
     resources :programs, only: [:index]
   end
+
+  get '/most_popular_program' => 'programs#most_popular'
 
 
 

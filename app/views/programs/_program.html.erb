@@ -1,0 +1,10 @@
+<div class="container">
+  <strong><%= program.name %> by: <%= program.teacher.first_name %> <%= program.teacher.last_name %></strong>
+  <p><strong><%= program.description %></strong></p>
+
+  <strong> Videos </strong>
+
+  <%= render partial: 'videos/videos_index', locals: {videos: program.videos}%>
+
+  <%= program_links(program) %>
+</div>

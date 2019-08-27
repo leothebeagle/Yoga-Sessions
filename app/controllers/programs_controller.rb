@@ -1,7 +1,7 @@
 class ProgramsController < ApplicationController
   
     before_action :authenticate_teacher!, only: [:new, :create, :edit, :update, :destroy]
-    before_action :require_login
+    before_action :require_login #move this to app controller. and manually skip in relevant controllers.
 
     
     def index
@@ -30,7 +30,7 @@ class ProgramsController < ApplicationController
         if @program.save
             redirect_to program_path(@program) 
         else
-            render new_program_path
+            render new_teacher_program_path(current_teacher)
         end
     end
 
@@ -56,6 +56,10 @@ class ProgramsController < ApplicationController
         redirect_to teacher_programs_path(current_teacher)
     end
 
+    def most_popular
+        @program = Program.most_popular_program
+    end
+
     private 
 
     def program_params
@@ -71,6 +75,6 @@ class ProgramsController < ApplicationController
         end
     end
 
-   
-
+   # refactor finding a program. maybe set_program. DRYs up.
 end
+
